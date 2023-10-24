@@ -64,7 +64,7 @@ public class learningvp  extends ApplicationAdapter {
         leftbutton = new Button(leftskin);
         rightbutton = new Button(rightskin);
         jumpbutton = new Button(jumpskin);
-       ufb.pos(jumpbutton,bottomview,0,100);
+     //  ufb.pos(jumpbutton,bottomview,0,100);
        jumpbutton.sizeBy(100/ppm,100/ppm);
        stage.addActor(leftbutton);
         stage.addActor(jumpbutton);
