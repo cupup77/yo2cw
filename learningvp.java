@@ -73,7 +73,25 @@ public class learningvp  extends ApplicationAdapter {
       leftbutton.setPosition(0,100/ppm);
       rightbutton.setPosition(200/ppm,200/ppm);
       jumpbutton.setPosition(400/ppm,400/ppm);
-
+  Gdx.input.setInputProcessor(new InputMultiplexer(stage));
+        leftbutton.addListener(new ChangeListener() {
+            @Override
+            public void changed(ChangeEvent event, Actor actor) {
+                body.applyForceToCenter(new Vector2(2/ppm,0),true);
+            }
+        });
+        rightbutton.addListener(new ChangeListener() {
+            @Override
+            public void changed(ChangeEvent event, Actor actor) {
+                body.applyForceToCenter(new Vector2(-2/ppm,0),true);
+            }
+        });
+        jumpbutton.addListener(new ChangeListener() {
+            @Override
+            public void changed(ChangeEvent event, Actor actor) {
+                body.applyForceToCenter(new Vector2(0,80/ppm),true);
+            }
+        });
         Gdx.input.setInputProcessor(new InputMultiplexer(stage));
         topview.update(screenwidth,screenheight);
         bottomview.update(screenwidth,screenheight);
